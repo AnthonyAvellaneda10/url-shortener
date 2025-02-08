@@ -9,7 +9,7 @@ export const Header = () => {
     <header className="flex items-center justify-between p-4 w-full">
       <Link
         to="/"
-        className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent"
+        className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent focus:outline-none"
       >
         Linkly
       </Link>
