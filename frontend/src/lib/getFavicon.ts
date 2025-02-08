@@ -15,6 +15,7 @@ const domainIcons: { [key: string]: { light: string; dark: string } } = {
   "twitter.com": { light: "/x-light.svg", dark: "/x-dark.svg" },
   "web.whatsapp.com": { light: "/whatsapp.svg", dark: "/whatsapp.svg" },
   "imagecolorpicker.com": { light: "/color-picker.svg", dark: "/color-picker.svg" },
+  "udemy.com": { light: "/udemy-dark.svg", dark: "/udemy-light.svg" },
 };
 
 const defaultImage = {
