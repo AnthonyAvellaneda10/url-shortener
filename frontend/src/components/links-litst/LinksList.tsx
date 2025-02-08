@@ -41,7 +41,7 @@ export const LinksList = ({ links }: LinksListProps) => {
 
   return (
     <>
-      <div className="px-4 mx-auto max-w-screen-2xl">
+      <div className="px-4 mx-auto max-w-screen-2xl mt-8">
         {links.length > 0 ? (
           <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
             <div className="overflow-x-auto">
