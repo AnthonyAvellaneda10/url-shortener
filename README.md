@@ -1,50 +1,110 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">✂️ URL Shortener</h1>
 
-Currently, two official plugins are available:
+This is a RESTful API that allows you to shorten long URLs, redirect to the original URL, get access statistics, and manage cached URLs. The API is built with **Node.js**, **Express**, **TypeScript**, **PostgreSQL**, and **Redis** for caching. It is also documented with **Swagger** for easy use and understanding. On the frontend side, **React + TS + Vite and Tailwind CSS were used.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot](https://i.ibb.co/ycXyNfk4/url-shortener-mockup.png)
+---
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. [Requirements](#requirements)
+2. [Configuration](#configuration)
+3. [Installation](#installation)
+4. [Endpoints](#endpoints)
+5. [API Documentation](#api-documentation)
+6. [License](#license)
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Requirements
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v22.13.1 o superior)
+- PostgreSQL (v16 o superior)
+- Redis (v7 o superior)
+- npm (v10.9.2 o superior)
+- React
+
+---
+
+## Configuration
+
+### 1. `.env` file
+
+Create a `.env` file in the root of the project with the following environment variables:
+
+```env
+# Application port
+PORT=5000
+
+# PostgreSQL configuration
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_HOST=your_host
+DB_PORT=your_port
+DB_DATABASE=your_database
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 2. Redis
+you need to have redis installed on your system, or other possible ways to use it is trough docker:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+to run redis with docker:
+```shell
+docker run --name some-redis -p 6379:3379 -d redis
 ```
+
+## Installation
+- Clone the repository:
+
+```bash
+git clone https://github.com/AnthonyAvellaneda10/url-shortener.git
+
+cd url-shortener
+```
+
+- Open two terminals
+  - Install the dependencies:
+
+```bash
+
+npm install
+
+cd .\frontend\
+
+npm install
+```
+
+  - Build the TypeScript project:
+
+```bash
+# Start the server:
+npm run dev
+
+# Start the client
+cd .\frontend\
+
+npm run dev
+```
+
+### Endpoints
+---
+- GET /shorten/list
+- GET /shorten/:shortCode
+- GET /shorten/:shortCode/stats
+- GET /:shortCode
+- POST /shorten
+- PUT /shorten/:shortCode
+- DELETE /shorten/:shortCode
+
+### API Documentation
+---
+The API is documented using Swagger. You can access the documentation at:
+
+```shell
+http://localhost:5000/api-docs
+```
+
+![Swagger](https://i.ibb.co/Fk8yjdxL/swagger.png)
+
+### License
+---
+This project is licensed under the MIT License. For more details, see the [LICENSE](https://github.com/twbs/bootstrap/blob/main/LICENSE) file.
