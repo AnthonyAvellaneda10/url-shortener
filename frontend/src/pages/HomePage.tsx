@@ -8,9 +8,9 @@ export const HomePage = () => {
   const { urls } = useUrlShortenerContext(); // Usa los URLs de useUrlShortener
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground select-none">
         <Header />
-        <main className="container mx-auto px-4 py-8 space-y-8">
+        <main className="container mx-auto px-4 py-8">
           <LinkShortener />
           <LinksList links={urls} />
         </main>
