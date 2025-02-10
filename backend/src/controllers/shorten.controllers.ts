@@ -3,7 +3,7 @@ import { createUrl, deleteUrl, getUrlByShortCode, incrementAccessCount, updateUr
 import { nanoid } from "nanoid";
 import validator from "validator";
 import axios from "axios";
-import { client } from "../server";
+import { client } from "../../server";
 
 export const getAllShortUrl = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -11,7 +11,7 @@ export const getAllShortUrl = async (req: Request, res: Response): Promise<void>
         const cachedList = await client.get("list");
 
         if (cachedList) {
-            // console.log("Usando datos de la caché:", JSON.parse(cachedList)); // 👀 Depurar contenido
+            console.log("Usando datos de la caché:", JSON.parse(cachedList)); // 👀 Depurar contenido
             res.status(200).json(JSON.parse(cachedList));
             return;
         }

@@ -12,5 +12,6 @@ export const pool = new pg.Pool({
   host: DB_HOST,
   password: DB_PASSWORD,
   database: DB_DATABASE,
-  port: DB_PORT ? parseInt(DB_PORT, 10) : undefined, // Convertir a número
+  port: DB_PORT ? parseInt(DB_PORT, 10) : undefined, // Convertir a número,
+  ssl: { rejectUnauthorized: false } // 🔹 Se agrega SSL para Neon
 });
