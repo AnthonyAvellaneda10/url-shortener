@@ -1,6 +1,8 @@
 
 <h1 align="center">✂️ URL Shortener</h1>
 
+This is a solution to the URL shortener project on roadmap.sh : https://roadmap.sh/projects/url-shortening-service
+
 This is a RESTful API that allows you to shorten long URLs, redirect to the original URL, get access statistics, and manage cached URLs. The API is built with **Node.js**, **Express**, **TypeScript**, **PostgreSQL**, and **Redis** for caching. It is also documented with **Swagger** for easy use and understanding. On the frontend side, **React + TS + Vite and Tailwind CSS were used.**
 
 ![Screenshot](https://i.ibb.co/ycXyNfk4/url-shortener-mockup.png)
