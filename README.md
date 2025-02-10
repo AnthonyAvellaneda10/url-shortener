@@ -18,10 +18,10 @@ This is a RESTful API that allows you to shorten long URLs, redirect to the orig
 
 ## Requirements
 
-- Node.js (v22.13.1 o superior)
-- PostgreSQL (v16 o superior)
-- Redis (v7 o superior)
-- npm (v10.9.2 o superior)
+- Node.js (v22.13.1 or higher)
+- PostgreSQL (v16 or higher)
+- Redis (v7 or higher)
+- npm (v10.9.2 or higher)
 - React
 
 ---
@@ -56,31 +56,26 @@ docker run --name some-redis -p 6379:3379 -d redis
 - Clone the repository:
 
 ```bash
-git clone https://github.com/AnthonyAvellaneda10/url-shortener.git
+git clone https://github.com/AnthonyAvellaneda10/linkly.git
 
-cd url-shortener
+cd linkly
 ```
 
 - Open two terminals
-  - Install the dependencies:
+  - Install the dependencies and run:
 
 ```bash
+cd .\backend\
 
 npm install
 
-cd .\frontend\
-
-npm install
+npm run dev
 ```
 
-  - Build the TypeScript project:
-
 ```bash
-# Start the server:
-npm run dev
-
-# Start the client
 cd .\frontend\
+
+npm install
 
 npm run dev
 ```
