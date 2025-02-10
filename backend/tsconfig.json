@@ -8,6 +8,6 @@
     "isolatedModules": true, // Habilitar la comprobación de módulos independientes,}
     "resolveJsonModule": true // Habilitar la resolución de módulos JSON
   },
-  "include": ["src/**/*", "server.ts"], // Incluir archivos
+  "include": ["src/**/*"], // Incluir archivos
   "exclude": ["node_modules", "dist"] // Excluir archivos
 }

@@ -1,11 +1,11 @@
 import express from 'express';
-import shortenRoute from './src/routes/shorten.routes';
+import shortenRoute from './routes/shorten.routes';
 import { createClient } from 'redis';
 
 import dotenv from 'dotenv';
 
 import swaggerUI from "swagger-ui-express";
-import specs from './src/swagger/swagger';
+import specs from './swagger/swagger';
 
 import cors from 'cors';
 

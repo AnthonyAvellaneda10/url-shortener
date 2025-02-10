@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
-  "exports": "./dist/server.mjs",
+  "exports": "./dist/server.js",
   "scripts": {
-    "dev": "tsx watch server.ts",
-    "start": "node dist/server.mjs",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
     "build": "pkgroll"
   },
   "keywords": [],

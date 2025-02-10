@@ -3,7 +3,7 @@ import { createUrl, deleteUrl, getUrlByShortCode, incrementAccessCount, updateUr
 import { nanoid } from "nanoid";
 import validator from "validator";
 import axios from "axios";
-import { client } from "../../server";
+import { client } from "../server";
 
 export const getAllShortUrl = async (req: Request, res: Response): Promise<void> => {
     try {
