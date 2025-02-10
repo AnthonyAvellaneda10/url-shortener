@@ -4,6 +4,8 @@ import toast from "react-hot-toast";
 import { QRCodeGenerate } from "./QRCodeGenerate";
 import { getFavicon } from "../../lib/getFavicon";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 export interface LinkRowProps {
   link: {
     id: string;
@@ -42,7 +44,7 @@ export const LinkRow = ({
         <td className="px-4 py-2">
           <div className="flex items-center gap-2">
             <span className="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
-              {`${host}/${short_code}`}
+              {`${BACKEND_URL}/${short_code}`}
             </span>
             <button
               onClick={copyToClipboard}
