@@ -4,6 +4,7 @@ import { DeleteLinkModal } from "../modals/DeleteLinkModal";
 import { EditLinkModal } from "../modals/EditLinkModal";
 import { LinkRow } from "./LinkRow";
 import { useUrlShortenerContext } from "../../context/UrlShortenerContext";
+import { Spinner } from "../Spinner";
 
 interface LinksListProps {
   links: Link[]; // Acepta 'links' como prop
@@ -13,7 +14,7 @@ export const LinksList = ({ links }: LinksListProps) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedLink, setSelectedLink] = useState<Link | null>(null);
-  const { updateUrl, deleteUrl } = useUrlShortenerContext();
+  const { updateUrl, deleteUrl, isLoading } = useUrlShortenerContext();
 
   const handleEdit = (link: Link) => {
     setSelectedLink(link);
@@ -42,7 +43,9 @@ export const LinksList = ({ links }: LinksListProps) => {
   return (
     <>
       <div className="px-4 mx-auto max-w-screen-2xl mt-8">
-        {links.length > 0 ? (
+        {isLoading ? (
+          <Spinner />
+        ) : links.length > 0 ? (
           <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
             <div className="overflow-x-auto">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
